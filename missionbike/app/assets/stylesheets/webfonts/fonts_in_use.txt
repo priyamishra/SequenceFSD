@@ -1,0 +1,18 @@
+
+Fonts actively used in this project
+-----------------------------------
+
+Font name       :   Playfair Display
+Font provider   :   google
+
+
+
+******************************************************************************Font name       :   Montserrat
+Font provider   :   google
+
+
+
+******************************************************************************
+
+
+

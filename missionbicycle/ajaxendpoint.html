@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Ajax Endpoint </title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+</head>
+
+<body>
+<!-- display the JSON data -->
+<div class="container"> </div>
+
+<div> 
+  <h2> GET </h2>
+  <input id="get" type="submit" value="Get">
+</div>
+
+<!-- Script to pull the JSON data MEthod 1 including the attributes-->
+<script>
+    var container = $('div.container');
+
+    $('input#get').click(function(){
+      $.ajax({
+      type: 'GET',
+      url: 'catalog.json',
+      dataType: 'json',   
+      success: function(data){
+        $.each(data, function(index, item){
+          $.each(item, function(key, value){
+            container.append(key + ': ' + value + '<br/>');
+            });
+          container.append('<br/><br/>');
+          });
+        }
+      });
+    })
+
+</script>
+
+</body>
+</html>
