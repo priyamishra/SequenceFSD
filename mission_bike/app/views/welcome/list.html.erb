@@ -1,0 +1,106 @@
+<!-- Best Seller and List of Bikes available Starts Here -->
+
+<div class="best-seller">
+	<div class="best-seller-row">
+		<div class="seller-column">
+			<div class="sale-box">
+				<span class="on_sale title_shop">bestseller</span>
+			</div>
+			<img src="../assets/biscyle1.jpg" alt=""  class="seller-img" id="imagebike">
+		</div>
+		<div class="seller-column1" id ="seller-col">
+			<h3>Sale</h3>
+			<span class="sale-nip"></span>
+
+			<!-- Script -->
+			<script>
+
+			$(window).load(function(){
+				var bsr_end = '</div><div class="clearfix"></div></div>';
+				var $bikes = $('#seller-col');
+
+				var list ='';
+				var list_all ='';
+				var list_begin = '<div id="spike"><div class="biseller-info"><ul id="flexiselDemo3">';
+				var $bikes1 = $('#spike');
+				
+				//Images are not provided
+				//$("#imagebike").attr("src", "http://localhost:3000/welcome/home/"+item.id);
+
+				// Pulling Data from the Service
+				$.getJSON("http://localhost:3000/welcome/home/")
+				.done(function( data ) {
+					$.each( data.products, function(i,item){
+						if (item.id == 1)
+						{
+
+							$bikes.append('<h4>'+ item.name + '</h4>')
+							$bikes.append('<small>by Missions Bike ' + item.id +'</small>')
+							$bikes.append('<p><i class="fa fa-usd"></i>'+item.price+'</p>')
+							$bikes.append('<div class="price"><a href="/welcome/details.html">More Details</a>')
+							$bikes.append('</div><p class="customer">'+item.description+'</p>')
+							$bikes.append('</div>');
+						}
+
+						list='<li style="width: 380px;" class="nbs-flexisel-item">'
+						list+='<div class="biseller-column">'
+						list+='<img src="../assets/sm'+item.id+'.jpg" alt="" class="veiw-img" id="imagebike2">'
+						list+='<div class="veiw-img-mark">'
+						list+='<a href="single.html">Quick View</a>'
+						list+='</div>'
+						list+='<div class="biseller-name1"><p> $ '+item.price+'</p></div>'
+						list+='<div class="biseller-name">'
+						list+='<h4>'+item.name+'</h4>'
+						list+='<small>By Missions Bicycle '+item.id+'</small></div>'
+						list+='<div class="clearfix"></div>'
+						list+='<div class="price-s"><a href="/welcome/details.html"> Check Details</a></div>'
+						// list+='</div>'
+						list+='</div>'
+						list+='</li>'
+						list_all+=list
+
+						$bikes.after(bsr_end+list_begin+list_all+'</ul></div></div></div>')
+
+					});
+				
+				$("#flexiselDemo3").flexisel({
+
+					visibleItems: 3,
+					animationSpeed: 1000,
+					autoPlay: true,
+					autoPlaySpeed: 3000,    		
+					pauseOnHover: true,
+					enableResponsiveBreakpoints: true,
+					responsiveBreakpoints: { 
+						portrait: { 
+							changePoint:480,
+							visibleItems: 1
+						},
+ 
+						landscape: {
+							changePoint:640,
+							visibleItems: 2
+						},
+
+						tablet: { 
+							changePoint:768,
+							visibleItems: 3
+						}
+					}
+				});
+				
+				});
+			});
+			
+			</script>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../assets/jquery.flexisel.js"></script>
+
+
+<!-- List of Bikes available in Catalog Ends -->
+
+
+

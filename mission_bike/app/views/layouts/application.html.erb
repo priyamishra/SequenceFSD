@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mission Bicycleshop</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0); 
+		}, false); function hideURLbar(){
+			window.scrollTo(0,1); 
+		} 
+	</script>
+
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display|Montserrat+Alternates' rel='stylesheet' type='text/css'>
+	
+</head>
+
+<body>
+
+	<!-- Header Starts Here -->
+	<div class="header">
+		<div class="container">
+			<div class="header-top">
+				<div class="logo">
+					<a href=""><img src="../assets/logo.png"></a>
+				</div>
+				<span class="menu"></span>
+				<div class="clear"></div>
+				<div class="navigation">
+					<ul class="navig">
+						<li><a href=""><i class='fa fa-bicycle'></i> Mission Bikes</a></li>
+						<li><a href=""><i class="fa fa-money"></i>&nbsp Best Buy</a></li>
+						<li><a href="">Offers</a></li>
+						<li><a href="">Accessories</a></li>
+						<li><a href=""><i class="fa fa-envelope-o"></i>&nbsp Contact</a></li>
+						<li><a href=""><i class="fa fa-building-o"></i>&nbsp About Us</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<!-- Multiple Content Starts Here -->
+			<%= yield %>
+			<!-- Multiple Content Ends Here -->
+			
+		</div>
+	</div>
+	<!-- Header Ends Here -->
+
+	<!-- fOOTER Starts Here -->
+	<div class="container">
+		<div class="footer-top">
+			<ul class="bottom-list">
+				<li><a href="#">terms & conditions</a></li>
+				<li><a href="#">return policy</a></li>
+				<li><a href="#">reviews</a></li>
+				<li><a href="#">about shop</a></li>
+				<li><a href="#">secure payment</a></li>
+			</ul>
+		</div><br/><br/>
+	</div>
+	<!-- fOOTER Ends Here -->
+
+</body>
+</html>
