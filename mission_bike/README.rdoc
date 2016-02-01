@@ -3,6 +3,6 @@
 Sequence: MISSION BIKE
 
 * Ruby on Rails Application
-* Technologies Used: Ruby on Rails, jQuery, JavaScript, HTML, CSS3
+* HTML, CSS3, Bootstrap, jQuery, JavaScript
 
 
